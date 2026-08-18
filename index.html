@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reem Al-Harkan | Architecture Portfolio</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      background:#0b0b0b;
+      color:#fff;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:35px 6%;
+    }
+
+    .logo{
+      font-size:24px;
+      font-weight:700;
+      letter-spacing:4px;
+    }
+
+    .menu{
+      font-size:34px;
+      cursor:pointer;
+    }
+
+    .hero{
+      min-height:90vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      padding:40px 7% 100px;
+    }
+
+    .hero-image{
+      width:100%;
+      max-width:1050px;
+      height:520px;
+      object-fit:cover;
+      border-radius:20px;
+      filter:brightness(.72);
+    }
+
+    h1{
+      font-size:clamp(65px, 12vw, 160px);
+      line-height:.9;
+      margin-top:55px;
+      font-weight:700;
+      letter-spacing:-5px;
+      text-align:center;
+    }
+
+    .subtitle{
+      margin-top:25px;
+      color:#999;
+      font-size:clamp(18px, 2vw, 30px);
+      letter-spacing:2px;
+      text-align:center;
+    }
+
+    .projects{
+      padding:100px 7%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    .section-title{
+      font-size:18px;
+      color:#888;
+      text-transform:uppercase;
+      letter-spacing:4px;
+      margin-bottom:45px;
+    }
+
+    .project{
+      border-top:1px solid #333;
+      padding:40px 0;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .project h2{
+      font-size:clamp(30px,5vw,65px);
+      font-weight:500;
+    }
+
+    .project span{
+      color:#888;
+      font-size:18px;
+    }
+
+    footer{
+      border-top:1px solid #222;
+      margin-top:80px;
+      padding:50px 7%;
+      color:#777;
+      text-align:center;
+    }
+
+    @media(max-width:700px){
+      header{
+        padding:25px;
+      }
+
+      .hero{
+        padding:20px 20px 80px;
+      }
+
+      .hero-image{
+        height:330px;
+      }
+
+      h1{
+        letter-spacing:-2px;
+        margin-top:40px;
+      }
+
+      .project{
+        align-items:flex-start;
+        flex-direction:column;
+        gap:12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">R / H</div>
+  <div class="menu">☰</div>
+</header>
+
+<section class="hero">
+
+  <img class="hero-image" src="hero.jpg" alt="Reem Al-Harkan Architecture Project">
+
+  <h1>REEM<br>AL-HARKAN</h1>
+
+  <div class="subtitle">
+    Architectural Engineering Portfolio
+  </div>
+
+</section>
+
+<section class="projects">
+
+  <div class="section-title">Selected Projects</div>
+
+  <div class="project">
+    <h2>NAFAS</h2>
+    <span>Women’s Health & Wellness Center</span>
+  </div>
+
+  <div class="project">
+    <h2>LUJJAH</h2>
+    <span>School of Marine Science & Research</span>
+  </div>
+
+  <div class="project">
+    <h2>CHILDREN'S LIBRARY</h2>
+    <span>Sustainable Architecture</span>
+  </div>
+
+</section>
+
+<footer>
+  © 2026 Reem Al-Harkan — Architectural Engineering Portfolio
+</footer>
+
+</body>
+</html>
