@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Reem Al-Harkan</title>
+<title>Reem Al-Harkan | Architectural Portfolio</title>
 
 <style>
+
+/* =========================
+   GENERAL
+========================= */
 
 *{
   margin:0;
@@ -22,51 +28,76 @@ body{
   background:#0a0a0a;
   color:#f5f5f5;
   font-family:Arial, Helvetica, sans-serif;
+  overflow-x:hidden;
 }
 
-/* HEADER */
+
+/* =========================
+   HEADER
+========================= */
 
 header{
-  height:90px;
+  height:88px;
   padding:0 5%;
   display:flex;
   align-items:center;
   justify-content:space-between;
 }
 
+
+/* LOGO */
+
 .logo img{
-  width:62px;
+  width:58px;
+  height:auto;
   display:block;
+  cursor:pointer;
+  transition:opacity .3s ease;
 }
 
+.logo img:hover{
+  opacity:.6;
+}
+
+
+/* MENU BUTTON */
+
 .menu{
-  width:30px;
-  cursor:pointer;
+  width:27px;
   display:flex;
   flex-direction:column;
   gap:6px;
+  cursor:pointer;
 }
 
 .menu span{
   display:block;
-  height:1px;
   width:100%;
+  height:1px;
   background:#fff;
 }
 
-/* MENU */
+
+/* =========================
+   FULL SCREEN MENU
+========================= */
 
 .overlay{
   position:fixed;
   inset:0;
+
   background:#0a0a0a;
-  z-index:100;
+
+  z-index:500;
+
   display:flex;
   justify-content:center;
   align-items:center;
+
   opacity:0;
   visibility:hidden;
-  transition:.3s;
+
+  transition:.35s ease;
 }
 
 .overlay.open{
@@ -74,42 +105,67 @@ header{
   visibility:visible;
 }
 
+
+/* CLOSE BUTTON */
+
 .close{
   position:absolute;
-  top:32px;
+
+  top:30px;
   right:5%;
-  font-size:28px;
-  cursor:pointer;
+
+  font-size:27px;
   font-weight:200;
+
+  cursor:pointer;
+
+  color:#fff;
 }
+
+
+/* MENU LINKS */
 
 .nav{
   display:flex;
   flex-direction:column;
+
   text-align:center;
+
   gap:22px;
 }
 
-.nav a{
-  color:white;
+.nav > a{
+  color:#fff;
+
   text-decoration:none;
-  font-size:32px;
+
+  font-size:30px;
   font-weight:300;
-  transition:.25s;
+
+  transition:.25s ease;
 }
 
-.nav a:hover{
-  opacity:.5;
+.nav > a:hover{
+  opacity:.45;
 }
 
-/* CONTACT */
+
+/* =========================
+   CONTACT
+========================= */
 
 .contact-links{
+
   display:none;
+
   flex-direction:column;
-  gap:14px;
-  margin-top:8px;
-  padding-top:20px;
+
+  gap:12px;
+
+  margin-top:10px;
+
+  padding-top:22px;
+
   border-top:1px solid #292929;
 }
 
@@ -118,365 +174,969 @@ header{
 }
 
 .contact-label{
+
   color:#555;
+
   font-size:9px;
+
   letter-spacing:3px;
+
   text-transform:uppercase;
-  margin-top:8px;
+
+  margin-top:7px;
 }
 
 .contact-links a{
-  font-size:15px;
+
   color:#aaa;
-  letter-spacing:.3px;
+
+  text-decoration:none;
+
+  font-size:14px;
+
+  transition:.25s ease;
 }
 
 .contact-links a:hover{
   color:#fff;
-  opacity:1;
 }
 
-/* HERO */
+
+/* =========================
+   LOGO PREVIEW
+========================= */
+
+.logo-preview{
+
+  position:fixed;
+
+  inset:0;
+
+  background:rgba(0,0,0,.95);
+
+  z-index:1000;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  opacity:0;
+
+  visibility:hidden;
+
+  transition:.35s ease;
+}
+
+.logo-preview.open{
+
+  opacity:1;
+
+  visibility:visible;
+}
+
+
+/* BIG LOGO */
+
+.logo-preview img{
+
+  width:min(380px,70vw);
+
+  height:auto;
+
+  transform:scale(.9);
+
+  transition:.35s ease;
+}
+
+.logo-preview.open img{
+
+  transform:scale(1);
+}
+
+
+/* CLOSE BIG LOGO */
+
+.logo-close{
+
+  position:absolute;
+
+  top:30px;
+  right:5%;
+
+  color:#fff;
+
+  font-size:27px;
+
+  font-weight:200;
+
+  cursor:pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
-  padding:35px 6% 120px;
-  max-width:1300px;
+
+  max-width:1280px;
+
   margin:auto;
+
+  padding:35px 6% 120px;
 }
 
-.hero img{
+
+/* MAIN IMAGE */
+
+.hero-image{
+
   width:100%;
-  height:560px;
+
+  height:550px;
+
   object-fit:cover;
-  border-radius:12px;
+
   display:block;
+
+  border-radius:11px;
 }
+
+
+/* NAME + TITLE */
 
 .identity{
-  margin-top:28px;
+
+  margin-top:27px;
+
   display:flex;
+
   justify-content:space-between;
+
   align-items:flex-end;
+
+  gap:30px;
 }
+
+
+/* NAME */
 
 .name{
-  font-size:26px;
+
+  font-size:24px;
+
   font-weight:400;
-  letter-spacing:.5px;
+
+  letter-spacing:.4px;
 }
 
+
+/* ARCHITECTURAL ENGINEER */
+
 .role{
+
   color:#777;
-  font-size:10px;
+
+  font-size:9px;
+
   letter-spacing:2.5px;
+
   text-transform:uppercase;
 }
 
-/* PROJECTS */
+
+/* =========================
+   PROJECTS
+========================= */
 
 .projects{
+
   max-width:1150px;
+
   margin:auto;
+
   padding:80px 6% 150px;
 }
 
+
+/* SELECTED WORKS */
+
 .label{
-  font-size:10px;
+
+  font-size:9px;
+
   color:#666;
+
   letter-spacing:3px;
+
   margin-bottom:45px;
 }
 
+
+/* PROJECT ROW */
+
 .project{
+
   border-top:1px solid #292929;
+
   padding:32px 0;
+
   display:grid;
-  grid-template-columns:45px 1fr 30px;
+
+  grid-template-columns:45px 1fr 35px;
+
   align-items:center;
+
   text-decoration:none;
-  color:white;
-  transition:.25s;
+
+  color:#fff;
+
+  cursor:pointer;
+
+  transition:.3s ease;
 }
 
 .project:last-child{
+
   border-bottom:1px solid #292929;
 }
 
 .project:hover{
-  opacity:.55;
+
+  opacity:.65;
 }
+
+
+/* PROJECT NUMBER */
 
 .number{
+
   color:#555;
-  font-size:10px;
+
+  font-size:9px;
+
+  letter-spacing:1px;
 }
+
+
+/* PROJECT NAME */
 
 .project h2{
-  font-size:30px;
+
+  font-size:29px;
+
   font-weight:400;
+
+  letter-spacing:-.5px;
 }
 
+
+/* PROJECT DESCRIPTION */
+
 .project p{
+
   color:#666;
+
   font-size:11px;
+
   margin-top:7px;
 }
 
-.arrow{
-  color:#777;
-  font-size:17px;
+
+/* =========================
+   MINIMAL ARROW
+   NOT AN EMOJI
+========================= */
+
+.project-arrow{
+
+  width:27px;
+
+  height:18px;
+
+  position:relative;
+
+  justify-self:end;
 }
 
-/* FOOTER */
+
+/* ARROW LINE */
+
+.project-arrow::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:22px;
+
+  height:1px;
+
+  background:#777;
+
+  right:0;
+
+  top:9px;
+
+  transition:.3s ease;
+}
+
+
+/* ARROW HEAD */
+
+.project-arrow::after{
+
+  content:"";
+
+  position:absolute;
+
+  width:6px;
+
+  height:6px;
+
+  border-top:1px solid #777;
+
+  border-right:1px solid #777;
+
+  right:1px;
+
+  top:6px;
+
+  transform:rotate(45deg);
+
+  transition:.3s ease;
+}
+
+
+/* ARROW MOVEMENT */
+
+.project:hover .project-arrow::before{
+
+  background:#fff;
+
+  transform:translateX(4px);
+}
+
+.project:hover .project-arrow::after{
+
+  border-color:#fff;
+
+  transform:translateX(4px) rotate(45deg);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
-  border-top:1px solid #202020;
+
   margin:0 6%;
+
   padding:35px 0 50px;
-  color:#555;
-  font-size:9px;
-  letter-spacing:1.5px;
+
+  border-top:1px solid #202020;
+
   display:flex;
+
   justify-content:space-between;
+
+  gap:15px;
+
+  color:#555;
+
+  font-size:9px;
+
+  letter-spacing:1.5px;
 }
 
-/* MOBILE */
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:700px){
 
   header{
-    height:75px;
+
+    height:72px;
+
+    padding:0 20px;
   }
+
 
   .logo img{
-    width:52px;
+
+    width:50px;
   }
 
+
   .hero{
+
     padding:20px 20px 80px;
   }
 
-  .hero img{
+
+  .hero-image{
+
     height:370px;
   }
 
+
   .identity{
+
     flex-direction:column;
+
     align-items:flex-start;
-    gap:10px;
+
+    gap:9px;
+
+    margin-top:22px;
   }
+
 
   .name{
-    font-size:22px;
+
+    font-size:21px;
   }
 
+
+  .role{
+
+    font-size:8px;
+  }
+
+
   .projects{
+
     padding:60px 20px 100px;
   }
 
+
   .project{
-    grid-template-columns:30px 1fr 20px;
+
+    grid-template-columns:30px 1fr 27px;
+
+    padding:27px 0;
   }
+
 
   .project h2{
-    font-size:23px;
+
+    font-size:22px;
   }
 
-  footer{
-    margin:0 20px;
-    flex-direction:column;
-    gap:8px;
+
+  .project p{
+
+    font-size:10px;
   }
+
+
+  .logo-preview img{
+
+    width:70vw;
+  }
+
+
+  footer{
+
+    margin:0 20px;
+
+    flex-direction:column;
+
+    gap:7px;
+  }
+
 }
 
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
 
+
+  <!-- LOGO -->
+
   <div class="logo">
-    <img src="logo.png" alt="Reem Al-Harkan">
+
+    <img
+      src="logo.png"
+      alt="Reem Al-Harkan Logo"
+      onclick="openLogo()">
+
   </div>
 
-  <div class="menu" onclick="openMenu()">
+
+  <!-- MENU -->
+
+  <div
+    class="menu"
+    onclick="openMenu()">
+
     <span></span>
     <span></span>
     <span></span>
+
   </div>
+
 
 </header>
 
 
-<!-- MENU -->
 
-<div class="overlay" id="overlay">
+<!-- =========================
+     LOGO PREVIEW
+========================= -->
 
-  <div class="close" onclick="closeMenu()">×</div>
+<div
+  class="logo-preview"
+  id="logoPreview"
+  onclick="closeLogoOutside(event)">
+
+
+  <!-- CLOSE -->
+
+  <div
+    class="logo-close"
+    onclick="closeLogo()">
+
+    ×
+
+  </div>
+
+
+  <!-- LARGE LOGO -->
+
+  <img
+    src="logo.png"
+    alt="Reem Al-Harkan Logo">
+
+</div>
+
+
+
+<!-- =========================
+     MENU
+========================= -->
+
+<div
+  class="overlay"
+  id="overlay">
+
+
+  <!-- CLOSE -->
+
+  <div
+    class="close"
+    onclick="closeMenu()">
+
+    ×
+
+  </div>
+
 
   <div class="nav">
 
-    <a href="#projects" onclick="closeMenu()">
+
+    <!-- PROJECTS -->
+
+    <a
+      href="#projects"
+      onclick="closeMenu()">
+
       Projects
+
     </a>
 
-    <a href="javascript:void(0)" onclick="toggleContact()">
+
+    <!-- CONTACT -->
+
+    <a
+      href="javascript:void(0)"
+      onclick="toggleContact()">
+
       Contact
+
     </a>
+
 
     <!-- CONTACT DETAILS -->
 
-    <div class="contact-links" id="contactLinks">
+    <div
+      class="contact-links"
+      id="contactLinks">
+
+
+      <!-- EMAIL -->
 
       <div class="contact-label">
+
         Email
+
       </div>
 
-      <a href="mailto:reemalharkan@outlook.com">
+
+      <a
+        href="mailto:reemalharkan@outlook.com">
+
         reemalharkan@outlook.com
+
       </a>
+
+
+      <!-- LINKEDIN -->
 
       <div class="contact-label">
+
         LinkedIn
+
       </div>
 
-      <a href="https://www.linkedin.com/in/reem-al-harkan"
-         target="_blank"
-         rel="noopener noreferrer">
+
+      <a
+        href="https://www.linkedin.com/in/reem-al-harkan"
+        target="_blank"
+        rel="noopener noreferrer">
+
         Reem Al-Harkan
+
       </a>
+
 
     </div>
+
 
   </div>
 
 </div>
 
 
-<!-- HERO -->
+
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero">
 
-  <img src="hero.jpg"
-       alt="Architecture by Reem Al-Harkan">
+
+  <!-- MAIN IMAGE -->
+
+  <img
+    class="hero-image"
+    src="hero.jpg"
+    alt="Architecture by Reem Al-Harkan">
+
+
+  <!-- IDENTITY -->
 
   <div class="identity">
 
+
+    <!-- NAME -->
+
     <div class="name">
+
       REEM AL-HARKAN
+
     </div>
+
+
+    <!-- TITLE -->
 
     <div class="role">
+
       Architectural Engineer
+
     </div>
 
+
   </div>
+
 
 </section>
 
 
-<!-- PROJECTS -->
 
-<section class="projects" id="projects">
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section
+  class="projects"
+  id="projects">
+
 
   <div class="label">
+
     SELECTED WORKS
+
   </div>
 
 
-  <!-- NAFAS -->
 
-  <a class="project" href="#">
+  <!-- =====================
+       01 NAFAS
+  ====================== -->
+
+  <a
+    class="project"
+    href="#">
+
 
     <div class="number">
+
       01
+
     </div>
+
 
     <div>
-      <h2>NAFAS</h2>
-      <p>Women's Health & Wellness Center</p>
+
+      <h2>
+
+        NAFAS
+
+      </h2>
+
+
+      <p>
+
+        Women's Health & Wellness Center
+
+      </p>
+
     </div>
 
-    <div class="arrow">
-      ↗
-    </div>
+
+    <!-- CSS ARROW -->
+
+    <div class="project-arrow"></div>
+
 
   </a>
 
 
-  <!-- LUJJAH -->
 
-  <a class="project" href="#">
+  <!-- =====================
+       02 LUJJAH
+  ====================== -->
+
+  <a
+    class="project"
+    href="#">
+
 
     <div class="number">
+
       02
+
     </div>
+
 
     <div>
-      <h2>LUJJAH</h2>
-      <p>School of Marine Science & Research</p>
+
+      <h2>
+
+        LUJJAH
+
+      </h2>
+
+
+      <p>
+
+        School of Marine Science & Research
+
+      </p>
+
     </div>
 
-    <div class="arrow">
-      ↗
-    </div>
+
+    <!-- CSS ARROW -->
+
+    <div class="project-arrow"></div>
+
 
   </a>
 
 
-  <!-- CHILDREN'S LIBRARY -->
 
-  <a class="project" href="#">
+  <!-- =====================
+       03 CHILDREN'S LIBRARY
+  ====================== -->
+
+  <a
+    class="project"
+    href="#">
+
 
     <div class="number">
+
       03
+
     </div>
+
 
     <div>
-      <h2>CHILDREN'S LIBRARY</h2>
-      <p>Sustainable Children's Library</p>
+
+      <h2>
+
+        CHILDREN'S LIBRARY
+
+      </h2>
+
+
+      <p>
+
+        Sustainable Children's Library
+
+      </p>
+
     </div>
 
-    <div class="arrow">
-      ↗
-    </div>
+
+    <!-- CSS ARROW -->
+
+    <div class="project-arrow"></div>
+
 
   </a>
+
 
 </section>
 
 
-<!-- FOOTER -->
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-  <div>
-    © 2026 REEM AL-HARKAN
-  </div>
 
   <div>
-    ARCHITECTURAL PORTFOLIO
+
+    © 2026 REEM AL-HARKAN
+
   </div>
+
+
+  <div>
+
+    ARCHITECTURAL PORTFOLIO
+
+  </div>
+
 
 </footer>
 
 
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
 <script>
 
+
+/* OPEN MENU */
+
 function openMenu(){
-  document.getElementById("overlay").classList.add("open");
+
+  document
+    .getElementById("overlay")
+    .classList.add("open");
+
 }
+
+
+/* CLOSE MENU */
 
 function closeMenu(){
-  document.getElementById("overlay").classList.remove("open");
+
+  document
+    .getElementById("overlay")
+    .classList.remove("open");
+
 }
 
+
+/* CONTACT */
+
 function toggleContact(){
-  document.getElementById("contactLinks").classList.toggle("show");
+
+  document
+    .getElementById("contactLinks")
+    .classList.toggle("show");
+
 }
+
+
+/* OPEN LOGO */
+
+function openLogo(){
+
+  document
+    .getElementById("logoPreview")
+    .classList.add("open");
+
+}
+
+
+/* CLOSE LOGO */
+
+function closeLogo(){
+
+  document
+    .getElementById("logoPreview")
+    .classList.remove("open");
+
+}
+
+
+/* CLOSE LOGO BY CLICKING OUTSIDE */
+
+function closeLogoOutside(event){
+
+  if(event.target.id === "logoPreview"){
+
+    closeLogo();
+
+  }
+
+}
+
+
+/* ESC KEY CLOSES EVERYTHING */
+
+document.addEventListener(
+  "keydown",
+  function(event){
+
+    if(event.key === "Escape"){
+
+      closeLogo();
+      closeMenu();
+
+    }
+
+  }
+);
+
 
 </script>
 
+
 </body>
+
 </html>
