@@ -1,424 +1,482 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Reem Al-Harkan | Architectural Portfolio</title>
+<title>Reem Al-Harkan</title>
 
-  <style>
+<style>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+html{
+  scroll-behavior:smooth;
+}
 
-    body {
-      background: #0b0b0b;
-      color: #ffffff;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+body{
+  background:#0a0a0a;
+  color:#f5f5f5;
+  font-family:Arial, Helvetica, sans-serif;
+}
 
-    /* HEADER */
+/* HEADER */
 
-    header {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 28px 6%;
-    }
+header{
+  height:90px;
+  padding:0 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
 
-    .logo img {
-      width: 150px;
-      height: auto;
-      display: block;
-    }
+.logo img{
+  width:62px;
+  display:block;
+}
 
-    .right-side {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
+.menu{
+  width:30px;
+  cursor:pointer;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
 
-    /* LINKEDIN */
+.menu span{
+  display:block;
+  height:1px;
+  width:100%;
+  background:#fff;
+}
 
-    .linkedin {
-      width: 42px;
-      height: 42px;
-      border: 1px solid #444;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #ffffff;
-      text-decoration: none;
-      transition: 0.3s ease;
-    }
+/* MENU */
 
-    .linkedin:hover {
-      background: #ffffff;
-      color: #000000;
-      transform: translateY(-3px);
-    }
+.overlay{
+  position:fixed;
+  inset:0;
+  background:#0a0a0a;
+  z-index:100;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  opacity:0;
+  visibility:hidden;
+  transition:.3s;
+}
 
-    .linkedin svg {
-      width: 18px;
-      height: 18px;
-      fill: currentColor;
-    }
+.overlay.open{
+  opacity:1;
+  visibility:visible;
+}
 
-    .menu {
-      font-size: 28px;
-      cursor: pointer;
-      padding-left: 5px;
-    }
+.close{
+  position:absolute;
+  top:32px;
+  right:5%;
+  font-size:28px;
+  cursor:pointer;
+  font-weight:200;
+}
 
+.nav{
+  display:flex;
+  flex-direction:column;
+  text-align:center;
+  gap:22px;
+}
 
-    /* HERO */
+.nav a{
+  color:white;
+  text-decoration:none;
+  font-size:32px;
+  font-weight:300;
+  transition:.25s;
+}
 
-    .hero {
-      min-height: 88vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 35px 7% 100px;
-    }
+.nav a:hover{
+  opacity:.5;
+}
 
-    .hero-image {
-      width: 100%;
-      max-width: 1100px;
-      height: 520px;
-      object-fit: cover;
-      border-radius: 18px;
-      filter: brightness(0.78);
-      transition: 0.5s ease;
-    }
+/* CONTACT */
 
-    .hero-image:hover {
-      filter: brightness(0.92);
-      transform: scale(1.005);
-    }
+.contact-links{
+  display:none;
+  flex-direction:column;
+  gap:14px;
+  margin-top:8px;
+  padding-top:20px;
+  border-top:1px solid #292929;
+}
 
-    h1 {
-      font-size: clamp(42px, 6vw, 82px);
-      line-height: 0.95;
-      margin-top: 48px;
-      font-weight: 600;
-      letter-spacing: -2px;
-      text-align: center;
-    }
+.contact-links.show{
+  display:flex;
+}
 
-    .subtitle {
-      margin-top: 20px;
-      color: #8e8e8e;
-      font-size: clamp(14px, 1.5vw, 20px);
-      letter-spacing: 3px;
-      text-align: center;
-      text-transform: uppercase;
-    }
+.contact-label{
+  color:#555;
+  font-size:9px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-top:8px;
+}
 
+.contact-links a{
+  font-size:15px;
+  color:#aaa;
+  letter-spacing:.3px;
+}
 
-    /* PROJECTS */
+.contact-links a:hover{
+  color:#fff;
+  opacity:1;
+}
 
-    .projects {
-      padding: 100px 7%;
-      max-width: 1200px;
-      margin: auto;
-    }
+/* HERO */
 
-    .section-title {
-      color: #777777;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 5px;
-      margin-bottom: 45px;
-    }
+.hero{
+  padding:35px 6% 120px;
+  max-width:1300px;
+  margin:auto;
+}
 
-    .project {
-      border-top: 1px solid #2d2d2d;
-      padding: 42px 5px;
-      display: flex;
-      align-items: center;
-      gap: 35px;
-      transition: 0.3s ease;
-      cursor: pointer;
-    }
+.hero img{
+  width:100%;
+  height:560px;
+  object-fit:cover;
+  border-radius:12px;
+  display:block;
+}
 
-    .project:last-child {
-      border-bottom: 1px solid #2d2d2d;
-    }
+.identity{
+  margin-top:28px;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+}
 
-    .project:hover {
-      padding-left: 20px;
-    }
+.name{
+  font-size:26px;
+  font-weight:400;
+  letter-spacing:.5px;
+}
 
-    .project-number {
-      width: 45px;
-      color: #666666;
-      font-size: 13px;
-      letter-spacing: 2px;
-    }
+.role{
+  color:#777;
+  font-size:10px;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+}
 
-    .project-info {
-      flex: 1;
-    }
+/* PROJECTS */
 
-    .project h2 {
-      font-size: clamp(27px, 4vw, 50px);
-      font-weight: 500;
-      letter-spacing: -1px;
-    }
+.projects{
+  max-width:1150px;
+  margin:auto;
+  padding:80px 6% 150px;
+}
 
-    .project p {
-      margin-top: 9px;
-      color: #858585;
-      font-size: 15px;
-      letter-spacing: 0.5px;
-    }
+.label{
+  font-size:10px;
+  color:#666;
+  letter-spacing:3px;
+  margin-bottom:45px;
+}
 
-    .arrow {
-      color: #777777;
-      font-size: 27px;
-      transition: 0.3s ease;
-    }
+.project{
+  border-top:1px solid #292929;
+  padding:32px 0;
+  display:grid;
+  grid-template-columns:45px 1fr 30px;
+  align-items:center;
+  text-decoration:none;
+  color:white;
+  transition:.25s;
+}
 
-    .project:hover .arrow {
-      color: #ffffff;
-      transform: translate(3px, -3px);
-    }
+.project:last-child{
+  border-bottom:1px solid #292929;
+}
 
+.project:hover{
+  opacity:.55;
+}
 
-    /* FOOTER */
+.number{
+  color:#555;
+  font-size:10px;
+}
 
-    footer {
-      margin-top: 80px;
-      padding: 45px 7%;
-      border-top: 1px solid #222222;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      color: #666666;
-      font-size: 12px;
-      letter-spacing: 1px;
-    }
+.project h2{
+  font-size:30px;
+  font-weight:400;
+}
 
+.project p{
+  color:#666;
+  font-size:11px;
+  margin-top:7px;
+}
 
-    /* MOBILE */
+.arrow{
+  color:#777;
+  font-size:17px;
+}
 
-    @media (max-width: 700px) {
+/* FOOTER */
 
-      header {
-        padding: 20px;
-      }
+footer{
+  border-top:1px solid #202020;
+  margin:0 6%;
+  padding:35px 0 50px;
+  color:#555;
+  font-size:9px;
+  letter-spacing:1.5px;
+  display:flex;
+  justify-content:space-between;
+}
 
-      .logo img {
-        width: 110px;
-      }
+/* MOBILE */
 
-      .linkedin {
-        width: 38px;
-        height: 38px;
-      }
+@media(max-width:700px){
 
-      .menu {
-        font-size: 25px;
-      }
+  header{
+    height:75px;
+  }
 
-      .hero {
-        padding: 25px 20px 70px;
-        min-height: auto;
-      }
+  .logo img{
+    width:52px;
+  }
 
-      .hero-image {
-        height: 320px;
-        border-radius: 14px;
-      }
+  .hero{
+    padding:20px 20px 80px;
+  }
 
-      h1 {
-        margin-top: 35px;
-        font-size: 46px;
-        letter-spacing: -1px;
-      }
+  .hero img{
+    height:370px;
+  }
 
-      .subtitle {
-        font-size: 12px;
-        letter-spacing: 2px;
-      }
+  .identity{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+  }
 
-      .projects {
-        padding: 80px 22px;
-      }
+  .name{
+    font-size:22px;
+  }
 
-      .project {
-        gap: 15px;
-        padding: 30px 0;
-      }
+  .projects{
+    padding:60px 20px 100px;
+  }
 
-      .project-number {
-        width: 30px;
-      }
+  .project{
+    grid-template-columns:30px 1fr 20px;
+  }
 
-      .project h2 {
-        font-size: 27px;
-      }
+  .project h2{
+    font-size:23px;
+  }
 
-      .project p {
-        font-size: 13px;
-      }
+  footer{
+    margin:0 20px;
+    flex-direction:column;
+    gap:8px;
+  }
+}
 
-      footer {
-        flex-direction: column;
-      }
-    }
-
-  </style>
+</style>
 </head>
-
 
 <body>
 
-  <!-- HEADER -->
+<header>
 
-  <header>
+  <div class="logo">
+    <img src="logo.png" alt="Reem Al-Harkan">
+  </div>
 
-    <div class="logo">
-      <img src="logo.png" alt="Reem Al-Harkan Logo">
-    </div>
+  <div class="menu" onclick="openMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 
-    <div class="right-side">
+</header>
 
-      <!-- LINKEDIN ICON -->
 
-      <a
-        class="linkedin"
-        href="https://www.linkedin.com/in/reem-al-harkan"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Reem Al-Harkan LinkedIn">
+<!-- MENU -->
 
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.32 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.1 20.45H3.54V9H7.1v11.45z"/>
-        </svg>
+<div class="overlay" id="overlay">
 
+  <div class="close" onclick="closeMenu()">×</div>
+
+  <div class="nav">
+
+    <a href="#projects" onclick="closeMenu()">
+      Projects
+    </a>
+
+    <a href="javascript:void(0)" onclick="toggleContact()">
+      Contact
+    </a>
+
+    <!-- CONTACT DETAILS -->
+
+    <div class="contact-links" id="contactLinks">
+
+      <div class="contact-label">
+        Email
+      </div>
+
+      <a href="mailto:reemalharkan@outlook.com">
+        reemalharkan@outlook.com
       </a>
 
-      <div class="menu">☰</div>
+      <div class="contact-label">
+        LinkedIn
+      </div>
+
+      <a href="https://www.linkedin.com/in/reem-al-harkan"
+         target="_blank"
+         rel="noopener noreferrer">
+        Reem Al-Harkan
+      </a>
 
     </div>
 
-  </header>
+  </div>
+
+</div>
 
 
-  <!-- MAIN HERO -->
+<!-- HERO -->
 
-  <section class="hero">
+<section class="hero">
 
-    <img
-      class="hero-image"
-      src="hero.jpg"
-      alt="Architectural project by Reem Al-Harkan">
+  <img src="hero.jpg"
+       alt="Architecture by Reem Al-Harkan">
 
-    <h1>REEM AL-HARKAN</h1>
+  <div class="identity">
 
-    <div class="subtitle">
-      Architectural Engineering Portfolio
+    <div class="name">
+      REEM AL-HARKAN
     </div>
 
-  </section>
-
-
-  <!-- PROJECTS -->
-
-  <section class="projects" id="projects">
-
-    <div class="section-title">
-      Selected Projects
+    <div class="role">
+      Architectural Engineer
     </div>
 
+  </div>
 
-    <!-- PROJECT 01 -->
-
-    <div class="project">
-
-      <div class="project-number">
-        01
-      </div>
-
-      <div class="project-info">
-        <h2>CHILDREN'S LIBRARY</h2>
-        <p>Sustainable Children's Library</p>
-      </div>
-
-      <div class="arrow">
-        ↗
-      </div>
-
-    </div>
+</section>
 
 
-    <!-- PROJECT 02 -->
+<!-- PROJECTS -->
 
-    <div class="project">
+<section class="projects" id="projects">
 
-      <div class="project-number">
-        02
-      </div>
-
-      <div class="project-info">
-        <h2>LUJJAH</h2>
-        <p>School of Marine Science & Research</p>
-      </div>
-
-      <div class="arrow">
-        ↗
-      </div>
-
-    </div>
+  <div class="label">
+    SELECTED WORKS
+  </div>
 
 
-    <!-- PROJECT 03 -->
+  <!-- NAFAS -->
 
-    <div class="project">
+  <a class="project" href="#">
 
-      <div class="project-number">
-        03
-      </div>
-
-      <div class="project-info">
-        <h2>NAFAS</h2>
-        <p>Women's Health & Wellness Center</p>
-      </div>
-
-      <div class="arrow">
-        ↗
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- FOOTER -->
-
-  <footer>
-
-    <div>
-      © 2026 REEM AL-HARKAN
+    <div class="number">
+      01
     </div>
 
     <div>
-      ARCHITECTURAL ENGINEERING PORTFOLIO
+      <h2>NAFAS</h2>
+      <p>Women's Health & Wellness Center</p>
     </div>
 
-  </footer>
+    <div class="arrow">
+      ↗
+    </div>
+
+  </a>
+
+
+  <!-- LUJJAH -->
+
+  <a class="project" href="#">
+
+    <div class="number">
+      02
+    </div>
+
+    <div>
+      <h2>LUJJAH</h2>
+      <p>School of Marine Science & Research</p>
+    </div>
+
+    <div class="arrow">
+      ↗
+    </div>
+
+  </a>
+
+
+  <!-- CHILDREN'S LIBRARY -->
+
+  <a class="project" href="#">
+
+    <div class="number">
+      03
+    </div>
+
+    <div>
+      <h2>CHILDREN'S LIBRARY</h2>
+      <p>Sustainable Children's Library</p>
+    </div>
+
+    <div class="arrow">
+      ↗
+    </div>
+
+  </a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div>
+    © 2026 REEM AL-HARKAN
+  </div>
+
+  <div>
+    ARCHITECTURAL PORTFOLIO
+  </div>
+
+</footer>
+
+
+<script>
+
+function openMenu(){
+  document.getElementById("overlay").classList.add("open");
+}
+
+function closeMenu(){
+  document.getElementById("overlay").classList.remove("open");
+}
+
+function toggleContact(){
+  document.getElementById("contactLinks").classList.toggle("show");
+}
+
+</script>
 
 </body>
 </html>
