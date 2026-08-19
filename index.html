@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,9 +9,7 @@
 
 <style>
 
-/* =========================
-   GENERAL
-========================= */
+/* GENERAL */
 
 *{
   margin:0;
@@ -32,9 +29,7 @@ body{
 }
 
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
 header{
   height:88px;
@@ -43,9 +38,6 @@ header{
   align-items:center;
   justify-content:space-between;
 }
-
-
-/* LOGO */
 
 .logo img{
   width:58px;
@@ -78,16 +70,12 @@ header{
 }
 
 
-/* =========================
-   FULL SCREEN MENU
-========================= */
+/* MENU OVERLAY */
 
 .overlay{
   position:fixed;
   inset:0;
-
   background:#0a0a0a;
-
   z-index:500;
 
   display:flex;
@@ -105,43 +93,28 @@ header{
   visibility:visible;
 }
 
-
-/* CLOSE BUTTON */
-
 .close{
   position:absolute;
-
   top:30px;
   right:5%;
-
   font-size:27px;
   font-weight:200;
-
   cursor:pointer;
-
   color:#fff;
 }
-
-
-/* MENU LINKS */
 
 .nav{
   display:flex;
   flex-direction:column;
-
   text-align:center;
-
   gap:22px;
 }
 
 .nav > a{
   color:#fff;
-
   text-decoration:none;
-
   font-size:30px;
   font-weight:300;
-
   transition:.25s ease;
 }
 
@@ -150,22 +123,14 @@ header{
 }
 
 
-/* =========================
-   CONTACT
-========================= */
+/* CONTACT */
 
 .contact-links{
-
   display:none;
-
   flex-direction:column;
-
   gap:12px;
-
   margin-top:10px;
-
   padding-top:22px;
-
   border-top:1px solid #292929;
 }
 
@@ -174,26 +139,17 @@ header{
 }
 
 .contact-label{
-
   color:#555;
-
   font-size:9px;
-
   letter-spacing:3px;
-
   text-transform:uppercase;
-
   margin-top:7px;
 }
 
 .contact-links a{
-
   color:#aaa;
-
   text-decoration:none;
-
   font-size:14px;
-
   transition:.25s ease;
 }
 
@@ -202,194 +158,115 @@ header{
 }
 
 
-/* =========================
-   LOGO PREVIEW
-========================= */
+/* LOGO PREVIEW */
 
 .logo-preview{
-
   position:fixed;
-
   inset:0;
-
   background:rgba(0,0,0,.95);
-
   z-index:1000;
 
   display:flex;
-
   align-items:center;
   justify-content:center;
 
   opacity:0;
-
   visibility:hidden;
 
   transition:.35s ease;
 }
 
 .logo-preview.open{
-
   opacity:1;
-
   visibility:visible;
 }
 
-
-/* BIG LOGO */
-
 .logo-preview img{
-
   width:min(380px,70vw);
-
   height:auto;
-
   transform:scale(.9);
-
   transition:.35s ease;
 }
 
 .logo-preview.open img{
-
   transform:scale(1);
 }
 
-
-/* CLOSE BIG LOGO */
-
 .logo-close{
-
   position:absolute;
-
   top:30px;
   right:5%;
-
   color:#fff;
-
   font-size:27px;
-
   font-weight:200;
-
   cursor:pointer;
 }
 
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero{
-
   max-width:1280px;
-
   margin:auto;
-
   padding:35px 6% 120px;
 }
 
-
-/* MAIN IMAGE */
-
 .hero-image{
-
   width:100%;
-
   height:550px;
-
   object-fit:cover;
-
   display:block;
-
   border-radius:11px;
 }
 
-
-/* NAME + TITLE */
-
 .identity{
-
   margin-top:27px;
 
   display:flex;
-
   justify-content:space-between;
-
   align-items:flex-end;
 
   gap:30px;
 }
 
-
-/* NAME */
-
 .name{
-
   font-size:24px;
-
   font-weight:400;
-
   letter-spacing:.4px;
 }
 
-
-/* ARCHITECTURAL ENGINEER */
-
 .role{
-
   color:#777;
-
   font-size:9px;
-
   letter-spacing:2.5px;
-
   text-transform:uppercase;
 }
 
 
-/* =========================
-   PROJECTS
-========================= */
+/* PROJECTS */
 
 .projects{
-
   max-width:1150px;
-
   margin:auto;
-
   padding:80px 6% 150px;
 }
 
-
-/* SELECTED WORKS */
-
 .label{
-
   font-size:9px;
-
   color:#666;
-
   letter-spacing:3px;
-
   margin-bottom:45px;
 }
 
-
-/* PROJECT ROW */
-
 .project{
-
   border-top:1px solid #292929;
-
   padding:32px 0;
 
   display:grid;
-
   grid-template-columns:45px 1fr 35px;
-
   align-items:center;
 
   text-decoration:none;
-
   color:#fff;
 
   cursor:pointer;
@@ -398,109 +275,68 @@ header{
 }
 
 .project:last-child{
-
   border-bottom:1px solid #292929;
 }
 
 .project:hover{
-
   opacity:.65;
 }
 
-
-/* PROJECT NUMBER */
-
 .number{
-
   color:#555;
-
   font-size:9px;
-
   letter-spacing:1px;
 }
 
-
-/* PROJECT NAME */
-
 .project h2{
-
   font-size:29px;
-
   font-weight:400;
-
   letter-spacing:-.5px;
 }
 
-
-/* PROJECT DESCRIPTION */
-
 .project p{
-
   color:#666;
-
   font-size:11px;
-
   margin-top:7px;
 }
 
 
-/* =========================
-   MINIMAL ARROW
-   NOT AN EMOJI
-========================= */
+/* MINIMAL ARROW */
 
 .project-arrow{
-
   width:27px;
-
   height:18px;
-
   position:relative;
-
   justify-self:end;
 }
 
-
-/* ARROW LINE */
-
 .project-arrow::before{
-
   content:"";
-
   position:absolute;
 
   width:22px;
-
   height:1px;
 
   background:#777;
 
   right:0;
-
   top:9px;
 
   transition:.3s ease;
 }
 
-
-/* ARROW HEAD */
-
 .project-arrow::after{
-
   content:"";
 
   position:absolute;
 
   width:6px;
-
   height:6px;
 
   border-top:1px solid #777;
-
   border-right:1px solid #777;
 
   right:1px;
-
   top:6px;
 
   transform:rotate(45deg);
@@ -508,165 +344,111 @@ header{
   transition:.3s ease;
 }
 
-
-/* ARROW MOVEMENT */
-
 .project:hover .project-arrow::before{
-
   background:#fff;
-
   transform:translateX(4px);
 }
 
 .project:hover .project-arrow::after{
-
   border-color:#fff;
-
   transform:translateX(4px) rotate(45deg);
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer{
-
   margin:0 6%;
-
   padding:35px 0 50px;
 
   border-top:1px solid #202020;
 
   display:flex;
-
   justify-content:space-between;
-
   gap:15px;
 
   color:#555;
 
   font-size:9px;
-
   letter-spacing:1.5px;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 
 @media(max-width:700px){
 
   header{
-
     height:72px;
-
     padding:0 20px;
   }
 
-
   .logo img{
-
     width:50px;
   }
 
-
   .hero{
-
     padding:20px 20px 80px;
   }
 
-
   .hero-image{
-
     height:370px;
   }
 
-
   .identity{
-
     flex-direction:column;
-
     align-items:flex-start;
-
     gap:9px;
-
     margin-top:22px;
   }
 
-
   .name{
-
     font-size:21px;
   }
 
-
   .role{
-
     font-size:8px;
   }
 
-
   .projects{
-
     padding:60px 20px 100px;
   }
 
-
   .project{
-
     grid-template-columns:30px 1fr 27px;
-
     padding:27px 0;
   }
 
-
   .project h2{
-
     font-size:22px;
   }
 
-
   .project p{
-
     font-size:10px;
   }
 
-
   .logo-preview img{
-
     width:70vw;
   }
 
-
   footer{
-
     margin:0 20px;
-
     flex-direction:column;
-
     gap:7px;
   }
 
 }
 
 </style>
-
 </head>
 
 
 <body>
 
 
-<!-- =========================
-     HEADER
-========================= -->
+<!-- HEADER -->
 
 <header>
-
-
-  <!-- LOGO -->
 
   <div class="logo">
 
@@ -678,8 +460,6 @@ footer{
   </div>
 
 
-  <!-- MENU -->
-
   <div
     class="menu"
     onclick="openMenu()">
@@ -690,33 +470,22 @@ footer{
 
   </div>
 
-
 </header>
 
 
 
-<!-- =========================
-     LOGO PREVIEW
-========================= -->
+<!-- LOGO PREVIEW -->
 
 <div
   class="logo-preview"
   id="logoPreview"
   onclick="closeLogoOutside(event)">
 
-
-  <!-- CLOSE -->
-
   <div
     class="logo-close"
     onclick="closeLogo()">
-
     ×
-
   </div>
-
-
-  <!-- LARGE LOGO -->
 
   <img
     src="logo.png"
@@ -726,30 +495,21 @@ footer{
 
 
 
-<!-- =========================
-     MENU
-========================= -->
+<!-- MENU -->
 
 <div
   class="overlay"
   id="overlay">
 
-
-  <!-- CLOSE -->
-
   <div
     class="close"
     onclick="closeMenu()">
-
     ×
-
   </div>
 
 
   <div class="nav">
 
-
-    <!-- PROJECTS -->
 
     <a
       href="#projects"
@@ -760,8 +520,6 @@ footer{
     </a>
 
 
-    <!-- CONTACT -->
-
     <a
       href="javascript:void(0)"
       onclick="toggleContact()">
@@ -771,38 +529,23 @@ footer{
     </a>
 
 
-    <!-- CONTACT DETAILS -->
-
     <div
       class="contact-links"
       id="contactLinks">
 
 
-      <!-- EMAIL -->
-
       <div class="contact-label">
-
         Email
-
       </div>
 
-
-      <a
-        href="mailto:reemalharkan@outlook.com">
-
+      <a href="mailto:reemalharkan@outlook.com">
         reemalharkan@outlook.com
-
       </a>
 
 
-      <!-- LINKEDIN -->
-
       <div class="contact-label">
-
         LinkedIn
-
       </div>
-
 
       <a
         href="https://www.linkedin.com/in/reem-al-harkan"
@@ -816,21 +559,15 @@ footer{
 
     </div>
 
-
   </div>
 
 </div>
 
 
 
-<!-- =========================
-     HERO
-========================= -->
+<!-- HERO -->
 
 <section class="hero">
-
-
-  <!-- MAIN IMAGE -->
 
   <img
     class="hero-image"
@@ -838,39 +575,23 @@ footer{
     alt="Architecture by Reem Al-Harkan">
 
 
-  <!-- IDENTITY -->
-
   <div class="identity">
 
-
-    <!-- NAME -->
-
     <div class="name">
-
       REEM AL-HARKAN
-
     </div>
-
-
-    <!-- TITLE -->
 
     <div class="role">
-
       Architectural Engineer
-
     </div>
 
-
   </div>
-
 
 </section>
 
 
 
-<!-- =========================
-     PROJECTS
-========================= -->
+<!-- PROJECTS -->
 
 <section
   class="projects"
@@ -878,137 +599,90 @@ footer{
 
 
   <div class="label">
-
     SELECTED WORKS
-
   </div>
 
 
 
-  <!-- =====================
-       01 NAFAS
-  ====================== -->
+  <!-- 01 NAFAS — CONNECTED -->
 
   <a
     class="project"
-    href="#">
-
+    href="nafas.html">
 
     <div class="number">
-
       01
-
     </div>
-
 
     <div>
 
       <h2>
-
         NAFAS
-
       </h2>
 
-
       <p>
-
         Women's Health & Wellness Center
-
       </p>
 
     </div>
 
-
-    <!-- CSS ARROW -->
-
     <div class="project-arrow"></div>
-
 
   </a>
 
 
 
-  <!-- =====================
-       02 LUJJAH
-  ====================== -->
+  <!-- 02 LUJJAH -->
 
   <a
     class="project"
     href="#">
 
-
     <div class="number">
-
       02
-
     </div>
-
 
     <div>
 
       <h2>
-
         LUJJAH
-
       </h2>
 
-
       <p>
-
         School of Marine Science & Research
-
       </p>
 
     </div>
 
-
-    <!-- CSS ARROW -->
-
     <div class="project-arrow"></div>
-
 
   </a>
 
 
 
-  <!-- =====================
-       03 CHILDREN'S LIBRARY
-  ====================== -->
+  <!-- 03 CHILDREN'S LIBRARY -->
 
   <a
     class="project"
     href="#">
 
-
     <div class="number">
-
       03
-
     </div>
-
 
     <div>
 
       <h2>
-
         CHILDREN'S LIBRARY
-
       </h2>
 
-
       <p>
-
         Sustainable Children's Library
-
       </p>
 
     </div>
 
-
-    <!-- CSS ARROW -->
-
     <div class="project-arrow"></div>
-
 
   </a>
 
@@ -1017,39 +691,25 @@ footer{
 
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer>
 
-
   <div>
-
     © 2026 REEM AL-HARKAN
-
   </div>
-
 
   <div>
-
     ARCHITECTURAL PORTFOLIO
-
   </div>
-
 
 </footer>
 
 
 
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
 <script>
 
-
-/* OPEN MENU */
+/* MENU */
 
 function openMenu(){
 
@@ -1058,9 +718,6 @@ function openMenu(){
     .classList.add("open");
 
 }
-
-
-/* CLOSE MENU */
 
 function closeMenu(){
 
@@ -1082,7 +739,7 @@ function toggleContact(){
 }
 
 
-/* OPEN LOGO */
+/* LOGO */
 
 function openLogo(){
 
@@ -1092,9 +749,6 @@ function openLogo(){
 
 }
 
-
-/* CLOSE LOGO */
-
 function closeLogo(){
 
   document
@@ -1102,9 +756,6 @@ function closeLogo(){
     .classList.remove("open");
 
 }
-
-
-/* CLOSE LOGO BY CLICKING OUTSIDE */
 
 function closeLogoOutside(event){
 
@@ -1117,7 +768,7 @@ function closeLogoOutside(event){
 }
 
 
-/* ESC KEY CLOSES EVERYTHING */
+/* ESC */
 
 document.addEventListener(
   "keydown",
@@ -1133,10 +784,8 @@ document.addEventListener(
   }
 );
 
-
 </script>
 
 
 </body>
-
 </html>
